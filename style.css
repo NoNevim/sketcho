@@ -1,0 +1,28 @@
+
+.container {
+    display: grid;
+    margin: auto;
+    
+           
+    grid-column-gap: 1px;
+    grid-row-gap: 1px;
+
+    width: 85vh;
+    height: 85vh;
+}
+
+.basicSquare {
+     background-color: red;    
+}
+
+.transSquare {
+    background-color: blue;
+}
+
+button {
+    display: block;
+    margin: 20px auto;
+    padding: 20px 40px ;
+    font-size: 30px;
+    background-color: gold;
+}
