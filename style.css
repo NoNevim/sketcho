@@ -12,11 +12,11 @@
 }
 
 .basicSquare {
-     background-color: red;    
+     background-color: rgb(255, 0, 0);    
 }
 
 .transSquare {
-    background-color: blue;
+    background-color: green;
 }
 
 button {
