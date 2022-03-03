@@ -53,12 +53,12 @@ function transform(item, event) {
                     item.color1=changeColor[1];          
                     item.color2=changeColor[2];                   
                     item.style = `background-color: rgb(${item.color0}, ${item.color1}, ${item.color2})`;
-                } else if ( item.shade > 0 ) {
-                    item.shade -= 1;
-                    item.color0 = ((item.color0)/10)*item.shade;
-                    item.color1 = ((item.color1)/10)*item.shade;
-                    item.color23 = ((item.color2)/10)*item.shade;
+                } else if ( item.shade > 0 ) {                    
+                    item.color0 = ((item.color0)/item.shade)*(item.shade-1);
+                    item.color1 = ((item.color1)/item.shade)*(item.shade-1);
+                    item.color2 = ((item.color2)/item.shade)*(item.shade-1);                    
                     item.style = `background-color: rgb(${item.color0}, ${item.color1}, ${item.color2})`;
+                    item.shade -= 1;
                 }
              }
              break;             
