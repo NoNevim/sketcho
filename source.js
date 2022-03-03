@@ -1,4 +1,3 @@
-let howMany = 0;
 let basicColor = []
 let changeColor = []
 const container = document.querySelector('.container');
@@ -7,7 +6,7 @@ square.classList.add('basicSquare');
 square.setAttribute('style', `background-color: rgb(0, 255, 0)`);
 document.querySelector('button').addEventListener('click', reset);
 square.addEventListener('click', transform);
-
+document.getElementById('grid').addEventListener('change', reset);
 
 function addSquares(howMany) {
     container.style = `grid-template-columns: repeat(${howMany}, 1fr); grid-template-rows: repeat(${howMany}, 1fr)`;
@@ -66,15 +65,9 @@ function transform(item, event) {
 }
 
 function reset() {
-    howMany = input();
+    howMany = document.getElementById('grid').value;
     document.querySelectorAll('.basicSquare').forEach( (item) => { item.parentNode.removeChild(item)});
     addSquares(howMany);
-}
-
-function input() {
-    let columns = Number(prompt('How many columns?'));
-    if ( columns > 200 ) columns = 200;
-    return columns;
 }
 
 function random() {
