@@ -9,16 +9,26 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>    
-    <button>reset</button>
-    <select name="bla" id="blabla">
-        <option value="redgreen">red-green</option>
-        <option value="randomColor">random color</option>
-        <option value="fading">fading</option>
-    </select>
-    <input type="color" value="#ff0000" id="basicColor">
-    <input type="color" value="#ff0000" id="changeColor">
-    <input type="number" id="grid" name="grid" min="1" max="200" value="2">
-
+    <div class="header">        
+        <select name="bla" id="blabla">
+            <option value="solid">solid color</option>
+            <option value="randomColor">random color</option>
+            <option value="fading">fading</option>
+        </select>
+        <form action="">
+            <label for="basicColor">Select background color:</label>
+            <input type="color" value="#ff0000" id="basicColor">
+        </form>
+        <form action="">
+            <label for="changeColor">Select pen color:</label>
+            <input type="color" value="#e10000" id="changeColor">
+        </form>
+        <form action="">
+            <label for="grid">Select grid dimension:</label>
+            <input type="number" id="grid" name="grid" min="1" max="200" value="2">
+        </form>
+        <button>reset</button>
+    </div>
 
     <div class="container"></div>
     

@@ -21,9 +21,15 @@
 } */
 
 button {
-    display: block;
-    margin: 20px auto;
+    /* display: block; */
+    /* margin: 20px auto; */
     padding: 20px 40px ;
     font-size: 30px;
     background-color: gold;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }

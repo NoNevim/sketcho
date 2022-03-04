@@ -3,20 +3,33 @@ let changeColor = []
 const container = document.querySelector('.container');
 const square = document.createElement('div');
 square.classList.add('basicSquare');
-square.setAttribute('style', `background-color: rgb(0, 255, 0)`);
+/* square.setAttribute('style', `background-color: rgb(0, 255, 0)`); */
 document.querySelector('button').addEventListener('click', reset);
 square.addEventListener('click', transform);
 document.getElementById('grid').addEventListener('change', reset);
 
 function addSquares(howMany) {
     container.style = `grid-template-columns: repeat(${howMany}, 1fr); grid-template-rows: repeat(${howMany}, 1fr)`;
-    getColors()
-    square.setAttribute('style', `background-color: rgb(${basicColor[0]}, ${basicColor[1]}, ${basicColor[2]})`);
+ 
+    /* square.setAttribute('style', `background-color: rgb(${basicColor[0]}, ${basicColor[1]}, ${basicColor[2]})`); */
+    /* square.shade=10; */
     for ( let i = 0; i < ( howMany * howMany ); i++ ) {
         container.appendChild(square.cloneNode(true));
     }    
+    document.querySelectorAll('.basicSquare').forEach(item => setBasicColor(item));
     document.querySelectorAll('.basicSquare').forEach(item => {item.addEventListener('mouseover', (event) => transform(item, event))});
 }
+
+
+function setBasicColor(item) {
+    getColors()
+    item.shade=10;
+    item.color0=basicColor[0];        
+    item.color1=basicColor[1];          
+    item.color2=basicColor[2];    
+    item.style = `background-color: rgb(${item.color0}, ${item.color1}, ${item.color2})`;
+}
+
 
 
 function transform(item, event) {
